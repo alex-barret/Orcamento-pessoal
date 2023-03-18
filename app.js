@@ -40,6 +40,9 @@ class Bd {
 
         localStorage.setItem('id', id)
     }
+    recuperarTodosRegistros() {
+        localStorage.getItem()
+    }
 }
 
 let bd = new Bd()
@@ -69,7 +72,7 @@ function cadastrarDespesa() {
         document.getElementById('modal_btn').innerHTML = 'Voltar'
         document.getElementById('modal_btn').className = 'btn btn-success'
 
-        $('#modalRegistroDespesa').modal('show')
+        $('#modalRegistraDespesa').modal('show')
         //
     } else {
         document.getElementById('modal_titulo').innerHTML = 'Erro na inclusão do registro'
@@ -79,7 +82,11 @@ function cadastrarDespesa() {
         document.getElementById('modal_btn').className = 'btn btn-danger'
 
 
-        $('#modalRegistroDespesa').modal('show')
+        $('#modalRegistraDespesa').modal('show')
+    }
+
+    function carregaListaDespesas() {
+        bd.recuperarTodosRegistros()
     }
 
 }
